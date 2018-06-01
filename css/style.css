@@ -4,6 +4,28 @@ a {  color: inherit; /*继承祖先的属性*/  text-decoration: none; /*a标签
 hr {  height: 0;  border: none;  border-top: 1px solid #DEDEDE;  }
 ol, ul {  list-style: none;  }
 h1, h2, h3, h4, h5, h6 {  font-weight: normal;  }
+.clearfix::after {  content: '';  display: block;  clear: both;  }
+[data-x].active{
+    outline: 10px solid red;
+}
+[data-x].offset{
+    transform: translateY(300px);
+}
+[data-x]{
+    transform: translateY(0px);
+    transition: all 0.5s;
+}
+[data-x].animate{
+    animation:slideUp 0.5s;
+}
+@keyframes slideUp {
+    0%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
 
 @keyframes s { 0% {  width: 0;  height: 0;  opacity: 1;  } 100% {  width: 100px;  height: 100px;  opacity: 0;  } }
 .topNavBar {color: #B7B7B7;  padding: 20px 0 20px 0;  position: fixed;  top: 0;  left: 0;  width: 100%;  transition: all 0.5s;}
@@ -12,9 +34,9 @@ h1, h2, h3, h4, h5, h6 {  font-weight: normal;  }
 .topNavBar nav {  padding-top: 3px;  }
 .topNavBar nav > ul {  padding: 1px 0;  margin: 0;  }
 .topNavBar nav > ul > li {position: relative;  float: left;  margin-left: 17px;  margin-right: 17px;  }
-.clearfix::after {  content: '';  display: block;  clear: both;  }
 .topNavBar nav > ul > li > a {position: relative;  font-size: 12px;  color: inherit;  font-weight: bold;  border-top: 3px solid transparent;  border-bottom: 3px solid transparent;  padding-top: 5px;  padding-bottom: 5px;  display: block;  }
-.topNavBar nav > ul > li.active > a::after {
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li.highlight > a::after {
     content: '';
     display: block;
     position: absolute;
@@ -91,8 +113,10 @@ section.skills > h3 {  font-size: 14px;  line-height: 1.1;  padding-right: 40px;
 section.skills > ol {  background: white;  box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.2);  padding: 42px 50px 10px;  margin-top: 30px;  }
 section.skills > ol > li {  float: left;  width: 48%;  box-sizing: border-box;  }
 section.skills > ol > li:nth-child(even) {  float: right;  }
-section.skills .progressBar {  height: 5px;  background: #fae1e1;  border-radius: 2px;  margin: 4px 0 40px;  }
-section.skills .progressBar > .progress {  height: 100%;  border-radius: 2px;  background: #E6686A;  width: 70%;  }
+section.skills .progressBar {  height: 5px;  background: #fae1e1;  border-radius: 2px;  margin: 4px 0 40px;  overflow: hidden;}
+section.skills .progressBar > .progress {  height: 100%;  border-radius: 2px;  background: #E6686A;  width: 70%;  transform: translateX(0);transition: all 1s;}
+section.skills.offset .progress{  transform:translateX(-100%);  }
+
 section.portfolio {  text-align: center;  }
 section.portfolio > nav {  text-align: center;  }
 section.portfolio > nav > ol {  display: inline-block;  vertical-align: top;  }
