@@ -52,8 +52,10 @@ body > main .downloadResume-wrapper {  text-align: center;  }
 body > main .downloadResume {  font-size: 14px;  line-height: 16px;  padding: 21px 55px;  border: 1px solid #CDCFD1;  background: #EFEFEF;  display: inline-block;  border-radius: 2px;  color: #3d4451;  font-weight: bold;  margin: 32px 0;  transition: box-shadow 0.3s;  }
 body > main .downloadResume:hover {  box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.2);  }
 .selfIntroduction {  max-width: 940px;  margin-left: auto;  margin-right: auto;  text-align: center;  font-family: kai;  line-height: 1.8;  font-size: 18px;  }
-section.skills, section.portfolio {  max-width: 940px;  margin-left: auto;  margin-right: auto;  margin-top: 60px;  }
-section.skills > h2, section.portfolio > h2 {  text-align: center;  color: #3d4451;  font-size: 34px;  line-height: 1.2;  font-weight: 600;  }
+section.skills, section.portfolio, section.message {  max-width: 940px;  margin-left: auto;  margin-right: auto;  margin-top: 60px;  }
+section.skills > h2,
+section.message > h2,
+section.portfolio > h2{  text-align: center;  color: #3d4451;  font-size: 34px;  line-height: 1.2;  font-weight: 600;  }
 section.skills > h3 {  font-size: 14px;  line-height: 1.1;  padding-right: 40px;  }
 section.skills > ol {  background: white;  box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.2);  padding: 42px 50px 10px;  margin-top: 30px;  }
 section.skills > ol > li {  float: left;  width: 48%;  box-sizing: border-box;  }
@@ -73,3 +75,13 @@ section.portfolio > nav .bar-inner {  height: 100%;  background: #E6686A;  borde
 section.portfolio > nav .bar.state-1 .bar-inner {  margin-left: 0;  width: 50px;  }
 section.portfolio > nav .bar.state-2 .bar-inner {  margin-left: 65px;  width: 50px;  }
 section.portfolio > nav .bar.state-3 .bar-inner {  margin-left: 140px;  width: 56px;  }
+
+section.message > ol{
+    max-width:700px;
+    margin:0 auto;
+    border-top:1px solid #ddd;
+}
+section.message > ol > li{
+    padding:16px;
+    border-bottom:1px solid #ddd;
+}
