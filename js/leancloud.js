@@ -1,5 +1,5 @@
 !function(){
-    var view = document.querySelector('section.message')
+    var view = View('section.message')
 
     var model = {
         init:function () {
@@ -55,7 +55,7 @@
             )
         },
         bindEvents:function(){
-            this.form.addEventListener('submit',function(e){
+            this.form.addEventListener('submit',(e) => {
                 e.preventDefault()
                 this.saveMessage()
             })
